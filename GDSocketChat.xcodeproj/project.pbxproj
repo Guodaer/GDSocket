@@ -1,0 +1,1043 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3D4121B720F37DA5003A5B09 /* SocketHeartAliveManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4121B620F37DA5003A5B09 /* SocketHeartAliveManager.m */; };
+		3D4121BA20F37ED6003A5B09 /* SocketBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4121B920F37ED6003A5B09 /* SocketBaseModel.m */; };
+		3D4121BD20F47F17003A5B09 /* SocketRecvModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4121BC20F47F17003A5B09 /* SocketRecvModel.m */; };
+		3D4121C120F4CB5D003A5B09 /* BullTipsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D4121C020F4CB5D003A5B09 /* BullTipsView.m */; };
+		3D57277E20EA31D9004FB496 /* NSAttributedString+category.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D57277D20EA31D9004FB496 /* NSAttributedString+category.m */; };
+		3D57278120EA31EE004FB496 /* NSString+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D57278020EA31EE004FB496 /* NSString+Category.m */; };
+		3D57278420EA3B89004FB496 /* NSArray+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D57278320EA3B89004FB496 /* NSArray+Category.m */; };
+		3D57278720EA44D1004FB496 /* UIView+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D57278620EA44D1004FB496 /* UIView+Category.m */; };
+		3D57278C20EB5213004FB496 /* ChatRecvCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D57278B20EB5213004FB496 /* ChatRecvCell.m */; };
+		3D57278F20EB521F004FB496 /* ChatSendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D57278E20EB521F004FB496 /* ChatSendCell.m */; };
+		3D57279220EB7107004FB496 /* ChatManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D57279120EB7107004FB496 /* ChatManager.m */; };
+		3D57279520EB7FDF004FB496 /* ChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D57279420EB7FDF004FB496 /* ChatModel.m */; };
+		3D57279820EB8175004FB496 /* ChatUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D57279720EB8175004FB496 /* ChatUserModel.m */; };
+		3D5727F420EE0354004FB496 /* GDInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5727F320EE0353004FB496 /* GDInputView.m */; };
+		3D5727F820EE2055004FB496 /* NSObject+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5727F720EE2055004FB496 /* NSObject+Extension.m */; };
+		3D6D7CE420EA10D700484053 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D7CE320EA10D700484053 /* AppDelegate.m */; };
+		3D6D7CEC20EA10E200484053 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D6D7CEB20EA10E200484053 /* Assets.xcassets */; };
+		3D6D7CEF20EA10E200484053 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D6D7CED20EA10E200484053 /* LaunchScreen.storyboard */; };
+		3D6D7CF220EA10E200484053 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D7CF120EA10E200484053 /* main.m */; };
+		3D6D7CFC20EA10E200484053 /* GDSocketChatTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D7CFB20EA10E200484053 /* GDSocketChatTests.m */; };
+		3D6D7D0720EA10E200484053 /* GDSocketChatUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D7D0620EA10E200484053 /* GDSocketChatUITests.m */; };
+		3D6D7D1820EA11A900484053 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D7D1720EA11A900484053 /* BaseViewController.m */; };
+		3D6D7D2020EA121200484053 /* HomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D7D1F20EA121200484053 /* HomePageViewController.m */; };
+		3D6D7D2320EA121C00484053 /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D7D2220EA121C00484053 /* MineViewController.m */; };
+		3D6D7D2620EA123500484053 /* SocketManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D7D2520EA123500484053 /* SocketManager.m */; };
+		3D6D7D2A20EA125C00484053 /* GlobalConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D7D2920EA125C00484053 /* GlobalConfig.m */; };
+		3D6D7D3020EA170600484053 /* GDTabbarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D7D2F20EA170600484053 /* GDTabbarViewController.m */; };
+		3D6D7D3320EA172200484053 /* GDNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D7D3220EA172200484053 /* GDNavigationViewController.m */; };
+		3D6D7D3820EA1F0300484053 /* SocketServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D7D3720EA1F0300484053 /* SocketServer.m */; };
+		3D6D7D4420EA229300484053 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D7D4320EA229300484053 /* ChatViewController.m */; };
+		3D6D7D4720EA22BA00484053 /* HomePageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D7D4620EA22BA00484053 /* HomePageTableViewCell.m */; };
+		3D6D7D4B20EA238400484053 /* HomePageListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D7D4A20EA238400484053 /* HomePageListModel.m */; };
+		3D6D7D6420EA24B300484053 /* GDAppCrashHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D7D4F20EA24B300484053 /* GDAppCrashHandle.m */; };
+		3D6D7D6520EA24B300484053 /* NSArray+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D7D5120EA24B300484053 /* NSArray+Swizzling.m */; };
+		3D6D7D6620EA24B300484053 /* NSAttributedString+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D7D5320EA24B300484053 /* NSAttributedString+Swizzling.m */; };
+		3D6D7D6720EA24B300484053 /* NSDictionary+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D7D5520EA24B300484053 /* NSDictionary+Swizzling.m */; };
+		3D6D7D6820EA24B300484053 /* NSMutableArray+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D7D5720EA24B300484053 /* NSMutableArray+Swizzling.m */; };
+		3D6D7D6920EA24B300484053 /* NSMutableAttributedString+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D7D5920EA24B300484053 /* NSMutableAttributedString+Swizzling.m */; };
+		3D6D7D6A20EA24B300484053 /* NSMutableDictionary+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D7D5B20EA24B300484053 /* NSMutableDictionary+Swizzling.m */; };
+		3D6D7D6B20EA24B300484053 /* NSMutableString+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D7D5D20EA24B300484053 /* NSMutableString+Swizzling.m */; };
+		3D6D7D6C20EA24B300484053 /* NSObject+AvoidCrash.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D7D5F20EA24B300484053 /* NSObject+AvoidCrash.m */; };
+		3D6D7D6D20EA24B300484053 /* NSObject+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D7D6120EA24B300484053 /* NSObject+Swizzling.m */; };
+		3D6D7D6E20EA24B300484053 /* NSString+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D7D6320EA24B300484053 /* NSString+Swizzling.m */; };
+		3D6D7D7120EA255700484053 /* SocketClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D7D7020EA255700484053 /* SocketClient.m */; };
+		AF07A4C7E572AD06FD475C18 /* Pods_GDSocketChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 504C456E20C4312373AB112B /* Pods_GDSocketChat.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3D6D7CF820EA10E200484053 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D6D7CD720EA10D700484053 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3D6D7CDE20EA10D700484053;
+			remoteInfo = GDSocketChat;
+		};
+		3D6D7D0320EA10E200484053 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D6D7CD720EA10D700484053 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3D6D7CDE20EA10D700484053;
+			remoteInfo = GDSocketChat;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3D4121B520F37DA5003A5B09 /* SocketHeartAliveManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SocketHeartAliveManager.h; sourceTree = "<group>"; };
+		3D4121B620F37DA5003A5B09 /* SocketHeartAliveManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocketHeartAliveManager.m; sourceTree = "<group>"; };
+		3D4121B820F37ED6003A5B09 /* SocketBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SocketBaseModel.h; sourceTree = "<group>"; };
+		3D4121B920F37ED6003A5B09 /* SocketBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocketBaseModel.m; sourceTree = "<group>"; };
+		3D4121BB20F47F17003A5B09 /* SocketRecvModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SocketRecvModel.h; sourceTree = "<group>"; };
+		3D4121BC20F47F17003A5B09 /* SocketRecvModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocketRecvModel.m; sourceTree = "<group>"; };
+		3D4121BF20F4CB5D003A5B09 /* BullTipsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BullTipsView.h; sourceTree = "<group>"; };
+		3D4121C020F4CB5D003A5B09 /* BullTipsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BullTipsView.m; sourceTree = "<group>"; };
+		3D57277C20EA31D9004FB496 /* NSAttributedString+category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+category.h"; sourceTree = "<group>"; };
+		3D57277D20EA31D9004FB496 /* NSAttributedString+category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+category.m"; sourceTree = "<group>"; };
+		3D57277F20EA31EE004FB496 /* NSString+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Category.h"; sourceTree = "<group>"; };
+		3D57278020EA31EE004FB496 /* NSString+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Category.m"; sourceTree = "<group>"; };
+		3D57278220EA3B89004FB496 /* NSArray+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSArray+Category.h"; sourceTree = "<group>"; };
+		3D57278320EA3B89004FB496 /* NSArray+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Category.m"; sourceTree = "<group>"; };
+		3D57278520EA44D1004FB496 /* UIView+Category.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+Category.h"; sourceTree = "<group>"; };
+		3D57278620EA44D1004FB496 /* UIView+Category.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+Category.m"; sourceTree = "<group>"; };
+		3D57278A20EB5213004FB496 /* ChatRecvCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatRecvCell.h; sourceTree = "<group>"; };
+		3D57278B20EB5213004FB496 /* ChatRecvCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatRecvCell.m; sourceTree = "<group>"; };
+		3D57278D20EB521F004FB496 /* ChatSendCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatSendCell.h; sourceTree = "<group>"; };
+		3D57278E20EB521F004FB496 /* ChatSendCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatSendCell.m; sourceTree = "<group>"; };
+		3D57279020EB7107004FB496 /* ChatManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatManager.h; sourceTree = "<group>"; };
+		3D57279120EB7107004FB496 /* ChatManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatManager.m; sourceTree = "<group>"; };
+		3D57279320EB7FDF004FB496 /* ChatModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatModel.h; sourceTree = "<group>"; };
+		3D57279420EB7FDF004FB496 /* ChatModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatModel.m; sourceTree = "<group>"; };
+		3D57279620EB8175004FB496 /* ChatUserModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatUserModel.h; sourceTree = "<group>"; };
+		3D57279720EB8175004FB496 /* ChatUserModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatUserModel.m; sourceTree = "<group>"; };
+		3D5727F220EE0353004FB496 /* GDInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDInputView.h; sourceTree = "<group>"; };
+		3D5727F320EE0353004FB496 /* GDInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDInputView.m; sourceTree = "<group>"; };
+		3D5727F620EE2055004FB496 /* NSObject+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Extension.h"; sourceTree = "<group>"; };
+		3D5727F720EE2055004FB496 /* NSObject+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Extension.m"; sourceTree = "<group>"; };
+		3D6D7CDF20EA10D700484053 /* GDSocketChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GDSocketChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D6D7CE220EA10D700484053 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		3D6D7CE320EA10D700484053 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		3D6D7CEB20EA10E200484053 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3D6D7CEE20EA10E200484053 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3D6D7CF020EA10E200484053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D6D7CF120EA10E200484053 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3D6D7CF720EA10E200484053 /* GDSocketChatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GDSocketChatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D6D7CFB20EA10E200484053 /* GDSocketChatTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDSocketChatTests.m; sourceTree = "<group>"; };
+		3D6D7CFD20EA10E200484053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D6D7D0220EA10E200484053 /* GDSocketChatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GDSocketChatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D6D7D0620EA10E200484053 /* GDSocketChatUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDSocketChatUITests.m; sourceTree = "<group>"; };
+		3D6D7D0820EA10E200484053 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3D6D7D1620EA11A900484053 /* BaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		3D6D7D1720EA11A900484053 /* BaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		3D6D7D1E20EA121200484053 /* HomePageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePageViewController.h; sourceTree = "<group>"; };
+		3D6D7D1F20EA121200484053 /* HomePageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePageViewController.m; sourceTree = "<group>"; };
+		3D6D7D2120EA121C00484053 /* MineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineViewController.h; sourceTree = "<group>"; };
+		3D6D7D2220EA121C00484053 /* MineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineViewController.m; sourceTree = "<group>"; };
+		3D6D7D2420EA123500484053 /* SocketManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SocketManager.h; sourceTree = "<group>"; };
+		3D6D7D2520EA123500484053 /* SocketManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocketManager.m; sourceTree = "<group>"; };
+		3D6D7D2820EA125C00484053 /* GlobalConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlobalConfig.h; sourceTree = "<group>"; };
+		3D6D7D2920EA125C00484053 /* GlobalConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlobalConfig.m; sourceTree = "<group>"; };
+		3D6D7D2D20EA144600484053 /* GDSocketChat-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "GDSocketChat-prefix.pch"; sourceTree = "<group>"; };
+		3D6D7D2E20EA170600484053 /* GDTabbarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GDTabbarViewController.h; sourceTree = "<group>"; };
+		3D6D7D2F20EA170600484053 /* GDTabbarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDTabbarViewController.m; sourceTree = "<group>"; };
+		3D6D7D3120EA172200484053 /* GDNavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GDNavigationViewController.h; sourceTree = "<group>"; };
+		3D6D7D3220EA172200484053 /* GDNavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDNavigationViewController.m; sourceTree = "<group>"; };
+		3D6D7D3620EA1F0300484053 /* SocketServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SocketServer.h; sourceTree = "<group>"; };
+		3D6D7D3720EA1F0300484053 /* SocketServer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocketServer.m; sourceTree = "<group>"; };
+		3D6D7D3920EA1FB800484053 /* Macro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macro.h; sourceTree = "<group>"; };
+		3D6D7D4220EA229300484053 /* ChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		3D6D7D4320EA229300484053 /* ChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
+		3D6D7D4520EA22BA00484053 /* HomePageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePageTableViewCell.h; sourceTree = "<group>"; };
+		3D6D7D4620EA22BA00484053 /* HomePageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePageTableViewCell.m; sourceTree = "<group>"; };
+		3D6D7D4920EA238400484053 /* HomePageListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePageListModel.h; sourceTree = "<group>"; };
+		3D6D7D4A20EA238400484053 /* HomePageListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePageListModel.m; sourceTree = "<group>"; };
+		3D6D7D4E20EA24B300484053 /* GDAppCrashHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDAppCrashHandle.h; sourceTree = "<group>"; };
+		3D6D7D4F20EA24B300484053 /* GDAppCrashHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDAppCrashHandle.m; sourceTree = "<group>"; };
+		3D6D7D5020EA24B300484053 /* NSArray+Swizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Swizzling.h"; sourceTree = "<group>"; };
+		3D6D7D5120EA24B300484053 /* NSArray+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Swizzling.m"; sourceTree = "<group>"; };
+		3D6D7D5220EA24B300484053 /* NSAttributedString+Swizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+Swizzling.h"; sourceTree = "<group>"; };
+		3D6D7D5320EA24B300484053 /* NSAttributedString+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+Swizzling.m"; sourceTree = "<group>"; };
+		3D6D7D5420EA24B300484053 /* NSDictionary+Swizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Swizzling.h"; sourceTree = "<group>"; };
+		3D6D7D5520EA24B300484053 /* NSDictionary+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Swizzling.m"; sourceTree = "<group>"; };
+		3D6D7D5620EA24B300484053 /* NSMutableArray+Swizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+Swizzling.h"; sourceTree = "<group>"; };
+		3D6D7D5720EA24B300484053 /* NSMutableArray+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+Swizzling.m"; sourceTree = "<group>"; };
+		3D6D7D5820EA24B300484053 /* NSMutableAttributedString+Swizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableAttributedString+Swizzling.h"; sourceTree = "<group>"; };
+		3D6D7D5920EA24B300484053 /* NSMutableAttributedString+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableAttributedString+Swizzling.m"; sourceTree = "<group>"; };
+		3D6D7D5A20EA24B300484053 /* NSMutableDictionary+Swizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableDictionary+Swizzling.h"; sourceTree = "<group>"; };
+		3D6D7D5B20EA24B300484053 /* NSMutableDictionary+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableDictionary+Swizzling.m"; sourceTree = "<group>"; };
+		3D6D7D5C20EA24B300484053 /* NSMutableString+Swizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableString+Swizzling.h"; sourceTree = "<group>"; };
+		3D6D7D5D20EA24B300484053 /* NSMutableString+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableString+Swizzling.m"; sourceTree = "<group>"; };
+		3D6D7D5E20EA24B300484053 /* NSObject+AvoidCrash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AvoidCrash.h"; sourceTree = "<group>"; };
+		3D6D7D5F20EA24B300484053 /* NSObject+AvoidCrash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AvoidCrash.m"; sourceTree = "<group>"; };
+		3D6D7D6020EA24B300484053 /* NSObject+Swizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Swizzling.h"; sourceTree = "<group>"; };
+		3D6D7D6120EA24B300484053 /* NSObject+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Swizzling.m"; sourceTree = "<group>"; };
+		3D6D7D6220EA24B300484053 /* NSString+Swizzling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Swizzling.h"; sourceTree = "<group>"; };
+		3D6D7D6320EA24B300484053 /* NSString+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Swizzling.m"; sourceTree = "<group>"; };
+		3D6D7D6F20EA255700484053 /* SocketClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SocketClient.h; sourceTree = "<group>"; };
+		3D6D7D7020EA255700484053 /* SocketClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocketClient.m; sourceTree = "<group>"; };
+		504C456E20C4312373AB112B /* Pods_GDSocketChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GDSocketChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		79EFA72B876499B15591E635 /* Pods-GDSocketChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GDSocketChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GDSocketChat/Pods-GDSocketChat.debug.xcconfig"; sourceTree = "<group>"; };
+		D1E01227A8BEF653C6C49937 /* Pods-GDSocketChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GDSocketChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-GDSocketChat/Pods-GDSocketChat.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3D6D7CDC20EA10D700484053 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF07A4C7E572AD06FD475C18 /* Pods_GDSocketChat.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D6D7CF420EA10E200484053 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D6D7CFF20EA10E200484053 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3D4121BE20F4CB5D003A5B09 /* BullTipsView */ = {
+			isa = PBXGroup;
+			children = (
+				3D4121BF20F4CB5D003A5B09 /* BullTipsView.h */,
+				3D4121C020F4CB5D003A5B09 /* BullTipsView.m */,
+			);
+			path = BullTipsView;
+			sourceTree = "<group>";
+		};
+		3D57277B20EA31BE004FB496 /* GDExtension */ = {
+			isa = PBXGroup;
+			children = (
+				3D57277C20EA31D9004FB496 /* NSAttributedString+category.h */,
+				3D57277D20EA31D9004FB496 /* NSAttributedString+category.m */,
+				3D57277F20EA31EE004FB496 /* NSString+Category.h */,
+				3D57278020EA31EE004FB496 /* NSString+Category.m */,
+				3D57278220EA3B89004FB496 /* NSArray+Category.h */,
+				3D57278320EA3B89004FB496 /* NSArray+Category.m */,
+				3D57278520EA44D1004FB496 /* UIView+Category.h */,
+				3D57278620EA44D1004FB496 /* UIView+Category.m */,
+				3D5727F620EE2055004FB496 /* NSObject+Extension.h */,
+				3D5727F720EE2055004FB496 /* NSObject+Extension.m */,
+			);
+			path = GDExtension;
+			sourceTree = "<group>";
+		};
+		3D57278920EB5061004FB496 /* ChatCell */ = {
+			isa = PBXGroup;
+			children = (
+				3D57278A20EB5213004FB496 /* ChatRecvCell.h */,
+				3D57278B20EB5213004FB496 /* ChatRecvCell.m */,
+				3D57278D20EB521F004FB496 /* ChatSendCell.h */,
+				3D57278E20EB521F004FB496 /* ChatSendCell.m */,
+			);
+			path = ChatCell;
+			sourceTree = "<group>";
+		};
+		3D5727F120EE0353004FB496 /* GDInputView */ = {
+			isa = PBXGroup;
+			children = (
+				3D5727F220EE0353004FB496 /* GDInputView.h */,
+				3D5727F320EE0353004FB496 /* GDInputView.m */,
+			);
+			path = GDInputView;
+			sourceTree = "<group>";
+		};
+		3D5727F520EE2029004FB496 /* Socket_Model */ = {
+			isa = PBXGroup;
+			children = (
+				3D4121B820F37ED6003A5B09 /* SocketBaseModel.h */,
+				3D4121B920F37ED6003A5B09 /* SocketBaseModel.m */,
+				3D4121BB20F47F17003A5B09 /* SocketRecvModel.h */,
+				3D4121BC20F47F17003A5B09 /* SocketRecvModel.m */,
+			);
+			path = Socket_Model;
+			sourceTree = "<group>";
+		};
+		3D6D7CD620EA10D700484053 = {
+			isa = PBXGroup;
+			children = (
+				3D6D7CE120EA10D700484053 /* GDSocketChat */,
+				3D6D7CFA20EA10E200484053 /* GDSocketChatTests */,
+				3D6D7D0520EA10E200484053 /* GDSocketChatUITests */,
+				3D6D7CE020EA10D700484053 /* Products */,
+				E10CD19D3523A9EB130F5135 /* Pods */,
+				47A65E941E84A4FDCF8D8050 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		3D6D7CE020EA10D700484053 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3D6D7CDF20EA10D700484053 /* GDSocketChat.app */,
+				3D6D7CF720EA10E200484053 /* GDSocketChatTests.xctest */,
+				3D6D7D0220EA10E200484053 /* GDSocketChatUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3D6D7CE120EA10D700484053 /* GDSocketChat */ = {
+			isa = PBXGroup;
+			children = (
+				3D6D7D1520EA119400484053 /* Main */,
+				3D6D7D1C20EA11EF00484053 /* HomePage（首页） */,
+				3D6D7D1D20EA120100484053 /* Mine我的 */,
+				3D6D7D2720EA124A00484053 /* GlobalConfig */,
+				3D6D7D4120EA221800484053 /* ChatManager */,
+				3D6D7D1420EA118200484053 /* SocketManager（收发.） */,
+				3D6D7D3520EA1EF200484053 /* SocketServer（服务端） */,
+				3D6D7D4820EA231D00484053 /* SocketClient（客户端） */,
+				3D6D7D4C20EA24AF00484053 /* Lib */,
+				3D6D7CEB20EA10E200484053 /* Assets.xcassets */,
+				3D6D7CED20EA10E200484053 /* LaunchScreen.storyboard */,
+				3D6D7CF020EA10E200484053 /* Info.plist */,
+				3D6D7CF120EA10E200484053 /* main.m */,
+			);
+			path = GDSocketChat;
+			sourceTree = "<group>";
+		};
+		3D6D7CFA20EA10E200484053 /* GDSocketChatTests */ = {
+			isa = PBXGroup;
+			children = (
+				3D6D7CFB20EA10E200484053 /* GDSocketChatTests.m */,
+				3D6D7CFD20EA10E200484053 /* Info.plist */,
+			);
+			path = GDSocketChatTests;
+			sourceTree = "<group>";
+		};
+		3D6D7D0520EA10E200484053 /* GDSocketChatUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3D6D7D0620EA10E200484053 /* GDSocketChatUITests.m */,
+				3D6D7D0820EA10E200484053 /* Info.plist */,
+			);
+			path = GDSocketChatUITests;
+			sourceTree = "<group>";
+		};
+		3D6D7D1420EA118200484053 /* SocketManager（收发.） */ = {
+			isa = PBXGroup;
+			children = (
+				3D6D7D2420EA123500484053 /* SocketManager.h */,
+				3D6D7D2520EA123500484053 /* SocketManager.m */,
+				3D4121B520F37DA5003A5B09 /* SocketHeartAliveManager.h */,
+				3D4121B620F37DA5003A5B09 /* SocketHeartAliveManager.m */,
+			);
+			path = "SocketManager（收发.）";
+			sourceTree = "<group>";
+		};
+		3D6D7D1520EA119400484053 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				3D6D7CE220EA10D700484053 /* AppDelegate.h */,
+				3D6D7CE320EA10D700484053 /* AppDelegate.m */,
+				3D6D7D1620EA11A900484053 /* BaseViewController.h */,
+				3D6D7D1720EA11A900484053 /* BaseViewController.m */,
+				3D6D7D2E20EA170600484053 /* GDTabbarViewController.h */,
+				3D6D7D2F20EA170600484053 /* GDTabbarViewController.m */,
+				3D6D7D3120EA172200484053 /* GDNavigationViewController.h */,
+				3D6D7D3220EA172200484053 /* GDNavigationViewController.m */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		3D6D7D1C20EA11EF00484053 /* HomePage（首页） */ = {
+			isa = PBXGroup;
+			children = (
+				3D6D7D1E20EA121200484053 /* HomePageViewController.h */,
+				3D6D7D1F20EA121200484053 /* HomePageViewController.m */,
+				3D6D7D3B20EA219000484053 /* Controller */,
+				3D6D7D3C20EA21AE00484053 /* ModelManager */,
+				3D6D7D3D20EA21BE00484053 /* Cells */,
+			);
+			path = "HomePage（首页）";
+			sourceTree = "<group>";
+		};
+		3D6D7D1D20EA120100484053 /* Mine我的 */ = {
+			isa = PBXGroup;
+			children = (
+				3D6D7D2120EA121C00484053 /* MineViewController.h */,
+				3D6D7D2220EA121C00484053 /* MineViewController.m */,
+				3D6D7D4020EA21D700484053 /* Controller */,
+				3D6D7D3F20EA21CE00484053 /* ModelManager */,
+				3D6D7D3E20EA21C400484053 /* Cells */,
+			);
+			path = "Mine我的";
+			sourceTree = "<group>";
+		};
+		3D6D7D2720EA124A00484053 /* GlobalConfig */ = {
+			isa = PBXGroup;
+			children = (
+				3D6D7D2820EA125C00484053 /* GlobalConfig.h */,
+				3D6D7D2920EA125C00484053 /* GlobalConfig.m */,
+				3D6D7D2D20EA144600484053 /* GDSocketChat-prefix.pch */,
+				3D6D7D3920EA1FB800484053 /* Macro.h */,
+			);
+			path = GlobalConfig;
+			sourceTree = "<group>";
+		};
+		3D6D7D3520EA1EF200484053 /* SocketServer（服务端） */ = {
+			isa = PBXGroup;
+			children = (
+				3D6D7D3620EA1F0300484053 /* SocketServer.h */,
+				3D6D7D3720EA1F0300484053 /* SocketServer.m */,
+			);
+			path = "SocketServer（服务端）";
+			sourceTree = "<group>";
+		};
+		3D6D7D3B20EA219000484053 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3D6D7D4220EA229300484053 /* ChatViewController.h */,
+				3D6D7D4320EA229300484053 /* ChatViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3D6D7D3C20EA21AE00484053 /* ModelManager */ = {
+			isa = PBXGroup;
+			children = (
+				3D57279020EB7107004FB496 /* ChatManager.h */,
+				3D57279120EB7107004FB496 /* ChatManager.m */,
+				3D6D7D4920EA238400484053 /* HomePageListModel.h */,
+				3D6D7D4A20EA238400484053 /* HomePageListModel.m */,
+				3D57279320EB7FDF004FB496 /* ChatModel.h */,
+				3D57279420EB7FDF004FB496 /* ChatModel.m */,
+				3D57279620EB8175004FB496 /* ChatUserModel.h */,
+				3D57279720EB8175004FB496 /* ChatUserModel.m */,
+			);
+			path = ModelManager;
+			sourceTree = "<group>";
+		};
+		3D6D7D3D20EA21BE00484053 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3D6D7D4520EA22BA00484053 /* HomePageTableViewCell.h */,
+				3D6D7D4620EA22BA00484053 /* HomePageTableViewCell.m */,
+				3D57278920EB5061004FB496 /* ChatCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3D6D7D3E20EA21C400484053 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		3D6D7D3F20EA21CE00484053 /* ModelManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ModelManager;
+			sourceTree = "<group>";
+		};
+		3D6D7D4020EA21D700484053 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3D6D7D4120EA221800484053 /* ChatManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ChatManager;
+			sourceTree = "<group>";
+		};
+		3D6D7D4820EA231D00484053 /* SocketClient（客户端） */ = {
+			isa = PBXGroup;
+			children = (
+				3D6D7D6F20EA255700484053 /* SocketClient.h */,
+				3D6D7D7020EA255700484053 /* SocketClient.m */,
+			);
+			path = "SocketClient（客户端）";
+			sourceTree = "<group>";
+		};
+		3D6D7D4C20EA24AF00484053 /* Lib */ = {
+			isa = PBXGroup;
+			children = (
+				3D5727F520EE2029004FB496 /* Socket_Model */,
+				3D5727F120EE0353004FB496 /* GDInputView */,
+				3D57277B20EA31BE004FB496 /* GDExtension */,
+				3D4121BE20F4CB5D003A5B09 /* BullTipsView */,
+				3D6D7D4D20EA24B300484053 /* DGAvoidCrash */,
+			);
+			path = Lib;
+			sourceTree = "<group>";
+		};
+		3D6D7D4D20EA24B300484053 /* DGAvoidCrash */ = {
+			isa = PBXGroup;
+			children = (
+				3D6D7D4E20EA24B300484053 /* GDAppCrashHandle.h */,
+				3D6D7D4F20EA24B300484053 /* GDAppCrashHandle.m */,
+				3D6D7D5020EA24B300484053 /* NSArray+Swizzling.h */,
+				3D6D7D5120EA24B300484053 /* NSArray+Swizzling.m */,
+				3D6D7D5220EA24B300484053 /* NSAttributedString+Swizzling.h */,
+				3D6D7D5320EA24B300484053 /* NSAttributedString+Swizzling.m */,
+				3D6D7D5420EA24B300484053 /* NSDictionary+Swizzling.h */,
+				3D6D7D5520EA24B300484053 /* NSDictionary+Swizzling.m */,
+				3D6D7D5620EA24B300484053 /* NSMutableArray+Swizzling.h */,
+				3D6D7D5720EA24B300484053 /* NSMutableArray+Swizzling.m */,
+				3D6D7D5820EA24B300484053 /* NSMutableAttributedString+Swizzling.h */,
+				3D6D7D5920EA24B300484053 /* NSMutableAttributedString+Swizzling.m */,
+				3D6D7D5A20EA24B300484053 /* NSMutableDictionary+Swizzling.h */,
+				3D6D7D5B20EA24B300484053 /* NSMutableDictionary+Swizzling.m */,
+				3D6D7D5C20EA24B300484053 /* NSMutableString+Swizzling.h */,
+				3D6D7D5D20EA24B300484053 /* NSMutableString+Swizzling.m */,
+				3D6D7D5E20EA24B300484053 /* NSObject+AvoidCrash.h */,
+				3D6D7D5F20EA24B300484053 /* NSObject+AvoidCrash.m */,
+				3D6D7D6020EA24B300484053 /* NSObject+Swizzling.h */,
+				3D6D7D6120EA24B300484053 /* NSObject+Swizzling.m */,
+				3D6D7D6220EA24B300484053 /* NSString+Swizzling.h */,
+				3D6D7D6320EA24B300484053 /* NSString+Swizzling.m */,
+			);
+			path = DGAvoidCrash;
+			sourceTree = "<group>";
+		};
+		47A65E941E84A4FDCF8D8050 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				504C456E20C4312373AB112B /* Pods_GDSocketChat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E10CD19D3523A9EB130F5135 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				79EFA72B876499B15591E635 /* Pods-GDSocketChat.debug.xcconfig */,
+				D1E01227A8BEF653C6C49937 /* Pods-GDSocketChat.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3D6D7CDE20EA10D700484053 /* GDSocketChat */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D6D7D0B20EA10E200484053 /* Build configuration list for PBXNativeTarget "GDSocketChat" */;
+			buildPhases = (
+				84795E366F5B57B7D4108C24 /* [CP] Check Pods Manifest.lock */,
+				3D6D7CDB20EA10D700484053 /* Sources */,
+				3D6D7CDC20EA10D700484053 /* Frameworks */,
+				3D6D7CDD20EA10D700484053 /* Resources */,
+				979C91A3EA77C56AA616A3CC /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GDSocketChat;
+			productName = GDSocketChat;
+			productReference = 3D6D7CDF20EA10D700484053 /* GDSocketChat.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3D6D7CF620EA10E200484053 /* GDSocketChatTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D6D7D0E20EA10E200484053 /* Build configuration list for PBXNativeTarget "GDSocketChatTests" */;
+			buildPhases = (
+				3D6D7CF320EA10E200484053 /* Sources */,
+				3D6D7CF420EA10E200484053 /* Frameworks */,
+				3D6D7CF520EA10E200484053 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3D6D7CF920EA10E200484053 /* PBXTargetDependency */,
+			);
+			name = GDSocketChatTests;
+			productName = GDSocketChatTests;
+			productReference = 3D6D7CF720EA10E200484053 /* GDSocketChatTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3D6D7D0120EA10E200484053 /* GDSocketChatUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D6D7D1120EA10E200484053 /* Build configuration list for PBXNativeTarget "GDSocketChatUITests" */;
+			buildPhases = (
+				3D6D7CFE20EA10E200484053 /* Sources */,
+				3D6D7CFF20EA10E200484053 /* Frameworks */,
+				3D6D7D0020EA10E200484053 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3D6D7D0420EA10E200484053 /* PBXTargetDependency */,
+			);
+			name = GDSocketChatUITests;
+			productName = GDSocketChatUITests;
+			productReference = 3D6D7D0220EA10E200484053 /* GDSocketChatUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3D6D7CD720EA10D700484053 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = DouNiu;
+				TargetAttributes = {
+					3D6D7CDE20EA10D700484053 = {
+						CreatedOnToolsVersion = 9.4;
+					};
+					3D6D7CF620EA10E200484053 = {
+						CreatedOnToolsVersion = 9.4;
+						TestTargetID = 3D6D7CDE20EA10D700484053;
+					};
+					3D6D7D0120EA10E200484053 = {
+						CreatedOnToolsVersion = 9.4;
+						TestTargetID = 3D6D7CDE20EA10D700484053;
+					};
+				};
+			};
+			buildConfigurationList = 3D6D7CDA20EA10D700484053 /* Build configuration list for PBXProject "GDSocketChat" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3D6D7CD620EA10D700484053;
+			productRefGroup = 3D6D7CE020EA10D700484053 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3D6D7CDE20EA10D700484053 /* GDSocketChat */,
+				3D6D7CF620EA10E200484053 /* GDSocketChatTests */,
+				3D6D7D0120EA10E200484053 /* GDSocketChatUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3D6D7CDD20EA10D700484053 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D6D7CEF20EA10E200484053 /* LaunchScreen.storyboard in Resources */,
+				3D6D7CEC20EA10E200484053 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D6D7CF520EA10E200484053 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D6D7D0020EA10E200484053 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		84795E366F5B57B7D4108C24 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GDSocketChat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		979C91A3EA77C56AA616A3CC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-GDSocketChat/Pods-GDSocketChat-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/MJExtension/MJExtension.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJExtension.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GDSocketChat/Pods-GDSocketChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3D6D7CDB20EA10D700484053 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D5727F420EE0354004FB496 /* GDInputView.m in Sources */,
+				3D6D7D6520EA24B300484053 /* NSArray+Swizzling.m in Sources */,
+				3D6D7D2020EA121200484053 /* HomePageViewController.m in Sources */,
+				3D4121BA20F37ED6003A5B09 /* SocketBaseModel.m in Sources */,
+				3D6D7D6B20EA24B300484053 /* NSMutableString+Swizzling.m in Sources */,
+				3D57279220EB7107004FB496 /* ChatManager.m in Sources */,
+				3D4121B720F37DA5003A5B09 /* SocketHeartAliveManager.m in Sources */,
+				3D6D7D6E20EA24B300484053 /* NSString+Swizzling.m in Sources */,
+				3D6D7D3820EA1F0300484053 /* SocketServer.m in Sources */,
+				3D57277E20EA31D9004FB496 /* NSAttributedString+category.m in Sources */,
+				3D6D7D3320EA172200484053 /* GDNavigationViewController.m in Sources */,
+				3D6D7D6C20EA24B300484053 /* NSObject+AvoidCrash.m in Sources */,
+				3D6D7D3020EA170600484053 /* GDTabbarViewController.m in Sources */,
+				3D5727F820EE2055004FB496 /* NSObject+Extension.m in Sources */,
+				3D6D7D6620EA24B300484053 /* NSAttributedString+Swizzling.m in Sources */,
+				3D6D7D4420EA229300484053 /* ChatViewController.m in Sources */,
+				3D57278C20EB5213004FB496 /* ChatRecvCell.m in Sources */,
+				3D6D7CF220EA10E200484053 /* main.m in Sources */,
+				3D6D7D2320EA121C00484053 /* MineViewController.m in Sources */,
+				3D4121C120F4CB5D003A5B09 /* BullTipsView.m in Sources */,
+				3D57278F20EB521F004FB496 /* ChatSendCell.m in Sources */,
+				3D57278120EA31EE004FB496 /* NSString+Category.m in Sources */,
+				3D6D7D7120EA255700484053 /* SocketClient.m in Sources */,
+				3D57279520EB7FDF004FB496 /* ChatModel.m in Sources */,
+				3D6D7D1820EA11A900484053 /* BaseViewController.m in Sources */,
+				3D6D7D4B20EA238400484053 /* HomePageListModel.m in Sources */,
+				3D6D7D6820EA24B300484053 /* NSMutableArray+Swizzling.m in Sources */,
+				3D57279820EB8175004FB496 /* ChatUserModel.m in Sources */,
+				3D6D7D6D20EA24B300484053 /* NSObject+Swizzling.m in Sources */,
+				3D4121BD20F47F17003A5B09 /* SocketRecvModel.m in Sources */,
+				3D6D7D2620EA123500484053 /* SocketManager.m in Sources */,
+				3D6D7CE420EA10D700484053 /* AppDelegate.m in Sources */,
+				3D6D7D6920EA24B300484053 /* NSMutableAttributedString+Swizzling.m in Sources */,
+				3D57278420EA3B89004FB496 /* NSArray+Category.m in Sources */,
+				3D6D7D6A20EA24B300484053 /* NSMutableDictionary+Swizzling.m in Sources */,
+				3D57278720EA44D1004FB496 /* UIView+Category.m in Sources */,
+				3D6D7D2A20EA125C00484053 /* GlobalConfig.m in Sources */,
+				3D6D7D6720EA24B300484053 /* NSDictionary+Swizzling.m in Sources */,
+				3D6D7D6420EA24B300484053 /* GDAppCrashHandle.m in Sources */,
+				3D6D7D4720EA22BA00484053 /* HomePageTableViewCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D6D7CF320EA10E200484053 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D6D7CFC20EA10E200484053 /* GDSocketChatTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D6D7CFE20EA10E200484053 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D6D7D0720EA10E200484053 /* GDSocketChatUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3D6D7CF920EA10E200484053 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3D6D7CDE20EA10D700484053 /* GDSocketChat */;
+			targetProxy = 3D6D7CF820EA10E200484053 /* PBXContainerItemProxy */;
+		};
+		3D6D7D0420EA10E200484053 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3D6D7CDE20EA10D700484053 /* GDSocketChat */;
+			targetProxy = 3D6D7D0320EA10E200484053 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3D6D7CED20EA10E200484053 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3D6D7CEE20EA10E200484053 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3D6D7D0920EA10E200484053 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3D6D7D0A20EA10E200484053 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3D6D7D0C20EA10E200484053 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79EFA72B876499B15591E635 /* Pods-GDSocketChat.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9KAE53J4GG;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GDSocketChat/GlobalConfig/GDSocketChat-prefix.pch";
+				INFOPLIST_FILE = GDSocketChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.GDSocketChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3D6D7D0D20EA10E200484053 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1E01227A8BEF653C6C49937 /* Pods-GDSocketChat.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9KAE53J4GG;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "GDSocketChat/GlobalConfig/GDSocketChat-prefix.pch";
+				INFOPLIST_FILE = GDSocketChat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.GDSocketChat;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3D6D7D0F20EA10E200484053 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9KAE53J4GG;
+				INFOPLIST_FILE = GDSocketChatTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.GDSocketChatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GDSocketChat.app/GDSocketChat";
+			};
+			name = Debug;
+		};
+		3D6D7D1020EA10E200484053 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9KAE53J4GG;
+				INFOPLIST_FILE = GDSocketChatTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.GDSocketChatTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GDSocketChat.app/GDSocketChat";
+			};
+			name = Release;
+		};
+		3D6D7D1220EA10E200484053 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9KAE53J4GG;
+				INFOPLIST_FILE = GDSocketChatUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.GDSocketChatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GDSocketChat;
+			};
+			name = Debug;
+		};
+		3D6D7D1320EA10E200484053 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9KAE53J4GG;
+				INFOPLIST_FILE = GDSocketChatUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.GDSocketChatUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GDSocketChat;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3D6D7CDA20EA10D700484053 /* Build configuration list for PBXProject "GDSocketChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D6D7D0920EA10E200484053 /* Debug */,
+				3D6D7D0A20EA10E200484053 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D6D7D0B20EA10E200484053 /* Build configuration list for PBXNativeTarget "GDSocketChat" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D6D7D0C20EA10E200484053 /* Debug */,
+				3D6D7D0D20EA10E200484053 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D6D7D0E20EA10E200484053 /* Build configuration list for PBXNativeTarget "GDSocketChatTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D6D7D0F20EA10E200484053 /* Debug */,
+				3D6D7D1020EA10E200484053 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D6D7D1120EA10E200484053 /* Build configuration list for PBXNativeTarget "GDSocketChatUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D6D7D1220EA10E200484053 /* Debug */,
+				3D6D7D1320EA10E200484053 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3D6D7CD720EA10D700484053 /* Project object */;
+}
