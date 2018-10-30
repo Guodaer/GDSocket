@@ -10,11 +10,19 @@
 #import <sys/socket.h>
 #import <arpa/inet.h>
 #import "SocketRecvModel.h"
+#import "SocketBindModel.h"
 #define CONNECTNUMBER 10 //最多绑定数目
 
 //#import <sys/time.h>
 //#import <netdb.h>
 //#include <sys/ioctl.h>
+
+
+//typedef struct {
+//    char *uid;
+//    int client_fd;
+//} ClientFD;
+
 @interface SocketServer ()
 {
     int sock_fd;//服务端的sock_fd  即标识
@@ -22,7 +30,7 @@
     struct sockaddr_in remote_addr;//链接的客户端的addr，可以传null
     
 }
-@property (nonatomic, strong) NSMutableArray *clientFDArray;//存储客户端标识
+@property (nonatomic, strong) NSMutableArray<Sock_ClientHasBindModel *> *clientFDArray;//存储客户端标识
 
 @end
 static UInt16 port_num = 17878;//服务端端口号
@@ -62,7 +70,7 @@ static UInt16 port_num = 17878;//服务端端口号
     my_addr.sin_addr.s_addr = htonl(INADDR_ANY);
     my_addr.sin_len = sizeof(my_addr);
     bzero(&(my_addr.sin_zero), 8);
-
+    
     if ((sock_fd=socket(AF_INET, SOCK_STREAM, 0))== -1) {
         GDLog(@"socket create error");
     }else{
@@ -85,6 +93,7 @@ static UInt16 port_num = 17878;//服务端端口号
         }
     }else{
         GDLog(@"bind success %d",port_num);
+        [BullTipsView showMessage:[NSString stringWithFormat:@"已绑定端口号%d",port_num]];
     }
     
     if (listen(sock_fd, CONNECTNUMBER)==-1) {
@@ -93,8 +102,8 @@ static UInt16 port_num = 17878;//服务端端口号
         GDLog(@"listen success");
     }
     
+    
     while (true) {
-//        [BullTipsView showMessage:@"已开启服务，开始等待连接"];
         socklen_t sin_size = sizeof(struct sockaddr_in);
         
         int client_fd;
@@ -102,40 +111,48 @@ static UInt16 port_num = 17878;//服务端端口号
         if ((client_fd = accept(sock_fd, (struct sockaddr *)&remote_addr, &sin_size)) == -1) {
             GDLog(@"accept 失败");
             [BullTipsView showMessage:@"accept 失败"];
+            if ([self.s_delegate respondsToSelector:@selector(serverAcceptFailed:)]) {
+                [self.s_delegate serverAcceptFailed:sock_fd];
+            }
             break;
         }else{
             GDLog(@"accept 成功");
-            [BullTipsView showMessage:[NSString stringWithFormat:@"有客户端连接进来fd=%d,client=%d",sock_fd,client_fd]];
-            if ([_clientFDArray containsObject:[NSNumber numberWithInt:client_fd]]) {
-                [_clientFDArray addObject:[NSNumber numberWithInt:client_fd]];
+            if ([self.s_delegate respondsToSelector:@selector(server:didAcceptNewSocket:)]) {
+                [self.s_delegate server:sock_fd didAcceptNewSocket:client_fd];
             }
+            [BullTipsView showMessage:[NSString stringWithFormat:@"有客户端连接进来fd=%d,client=%d",sock_fd,client_fd]];
+            
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                 [self connectedScuuessWithClientFD:client_fd];
             });
         }
     }
 }
+
+- (void)insertClientFDArrayWith_clientfd:(int)client_fd{
+    
+}
+
 //链接成功监听通道的内容
 - (void)connectedScuuessWithClientFD:(int)client_fd {
     while (true) {
-//        NSString *json = [SocketManager socket_recvDataWithClientFD:client_fd];
-#if 0
-        NSString *json = [SocketManager socket_recvDataWithClientFD:client_fd complete:^(NSString *recvJson) {
-            
-        }];
-        GDLog(@"222222222");
-        if ([json checkIsNotNullString]) {
-            [self analysisRecvJson:json AndClientFD:client_fd];
-        }else{
-            close(client_fd);
-            break;
-        }
-#endif
         GDWeakSelf(weakSelf)
         BOOL isConnect = [SocketManager socket_recvDataWithClientFD:client_fd complete:^(NSString *recvJson) {
-            if ([recvJson checkIsNotNullString]) [weakSelf analysisRecvJson:recvJson AndClientFD:client_fd];
+            if ([recvJson checkIsNotNullString]){
+                if ([self.s_delegate respondsToSelector:@selector(server:didReadData:withclientFD:)]) {
+                    [self.s_delegate server:self->sock_fd didReadData:recvJson withclientFD:client_fd];
+                }
+                [weakSelf analysisRecvJson:recvJson AndClientFD:client_fd];
+                
+            }
         }];
         if (!isConnect) {
+            if ([self.s_delegate respondsToSelector:@selector(server:didLostClient:)]) {
+                [self.s_delegate server:sock_fd didLostClient:client_fd];
+            }
+            
+            [self removeBindModelWithClient_FD:client_fd];
+            
             [BullTipsView showMessage:[NSString stringWithFormat:@"clientfd：%d已断开连接",client_fd]];
             close(client_fd);
             break;
@@ -145,33 +162,127 @@ static UInt16 port_num = 17878;//服务端端口号
 }
 - (void)analysisRecvJson:(NSString *)json AndClientFD:(int)client_fd{
     NSDictionary *dataDic = [NSJSONSerialization JSONObjectWithData:[json dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableLeaves error:nil];
-    GDLog(@"server recv - %@",dataDic);
+    GDLog(@"server recv %d- %@",client_fd,dataDic);
+    [BullTipsView showMessage:dataDic[@"chat_message"]];
+    
     SocketBaseModel *model = [SocketBaseModel mj_objectWithKeyValues:dataDic];
-    if (model.sock_in == Socket_InitBindsc) {//初始化链接
+    if ([model.sock_in isEqualToString:Socket_InitBindsc]) {//初始化链接
         
-    }else if (model.sock_in == Socket_HeartAlive){//心跳包
         
-    }else if (model.sock_in == Socket_SendHandshakeSafe){//握手 每次发消息之前都要握手
+        
+        SocketBindModel *recvbindModel = [SocketBindModel mj_objectWithKeyValues:dataDic];
+        
+        Sock_ClientHasBindModel *hasBindModel = [[Sock_ClientHasBindModel alloc] init];
+        hasBindModel.bind_uid = recvbindModel.bind_uid;
+        hasBindModel.bind_client_fd = client_fd;
+        
+        //服务端做记录，把uid和clientfd绑定，转发的时候直接去查
+        if (![self checkArrayIsHaveUid:recvbindModel.bind_uid]) {
+            [_clientFDArray addObject:hasBindModel];
+        }else{
+            [self removeBindModelWithUid:recvbindModel.bind_uid];
+            [_clientFDArray addObject:hasBindModel];
+        }
+        
+        //回馈客户端，你已经连接
+        NSString *jsonString = [recvbindModel ObjectToJson];
+        [SocketManager socket_sendWithJson:jsonString SockFD:client_fd];
+        
+        
+    }else if ([model.sock_in isEqualToString:Socket_HeartAlive]){//心跳包
+        
+        GDHeartAliveModel *aliveModel = [GDHeartAliveModel mj_objectWithKeyValues:dataDic];
+        NSString *jsonString = [aliveModel ObjectToJson];
+        [SocketManager socket_sendWithJson:jsonString SockFD:client_fd];
+        
+        
+    }else if ([model.sock_in isEqualToString:Socket_SendHandshakeSafe]){//握手
         if ([SocketManager socket_sendWithJson:json SockFD:client_fd]) {
             //握手成功，接收消息
             //回到connectedScuuessWithClientFD:
             
         }
         
-    }else if (model.sock_in == Socket_Send_Recv_Message) {
+    }else if ([model.sock_in isEqualToString:Socket_Send_Recv_Message]) {
         
-        SocketRecvModel *chatModel = [[SocketRecvModel alloc] init];
-        chatModel.sock_in = Socket_Send_Recv_Message;
-        chatModel.chat_uid = @"server";
-        chatModel.chat_Touid = @"client";
-        chatModel.chat_message = @"我是server";
-        NSString *jsonString = [chatModel ObjectToJson];
-        [SocketManager socket_sendWithJson:jsonString SockFD:client_fd];
-
+        SocketRecvModel *recvModel = [SocketRecvModel mj_objectWithKeyValues:dataDic];
+        
+        if ([self checkArrayIsHaveUid:recvModel.chat_Touid]) {//对方在线
+            int willSendClientfd = [self obtainClient_FDWithTouid:recvModel.chat_Touid];
+            SocketRecvModel *sendModel = [[SocketRecvModel alloc] init];
+            sendModel.sock_in = Socket_Send_Recv_Message;
+            sendModel.chat_uid = recvModel.chat_uid;
+            sendModel.chat_Touid = recvModel.chat_Touid;
+            sendModel.chat_message = recvModel.chat_message;
+            NSString *jsonString = [sendModel ObjectToJson];
+            [SocketManager socket_sendWithJson:jsonString SockFD:willSendClientfd];
+            
+        }else{//没在线，以后要存数据库存起来，每次有新设备连进的时候判断是否有没转发的消息
+            
+            //            SocketRecvModel *chatModel = [[SocketRecvModel alloc] init];
+            //            chatModel.sock_in = Socket_Send_Recv_Message;
+            //            chatModel.chat_uid = @"server";
+            //            chatModel.chat_Touid = @"client";
+            //            chatModel.chat_message = @"我是server";
+            //            NSString *jsonString = [chatModel ObjectToJson];
+            //            [SocketManager socket_sendWithJson:jsonString SockFD:client_fd];
+            
+        }
+        
+        
+        
+        
     }
-    
-    
 }
 
+/**
+ 转发的时候找出发送的clientfd
+ 
+ @param touid touid description
+ @return return value description
+ */
+- (int)obtainClient_FDWithTouid:(NSString*)touid {
+    for (Sock_ClientHasBindModel *model in _clientFDArray) {
+        if ([model.bind_uid isEqualToString:touid]) {
+            return model.bind_client_fd;
+        }
+    }
+    return 0;
+}
+/**
+ 检测客户端是否在线
+ 
+ @param uid uid
+ @return return bool
+ */
+- (BOOL)checkArrayIsHaveUid:(NSString *)uid {
+    for (Sock_ClientHasBindModel *model in _clientFDArray) {
+        if ([model.bind_uid isEqualToString:uid]) {
+            return YES;
+        }
+    }
+    return NO;
+}
 
+/**
+ 客户端断开连接，删除相关的在线信息
+ 
+ @param client_fd client_fd
+ */
+- (void)removeBindModelWithClient_FD:(int)client_fd{
+    for (Sock_ClientHasBindModel *model in _clientFDArray) {
+        if (model.bind_client_fd == client_fd) {
+            [_clientFDArray removeObject:model];
+            break;
+        }
+    }
+}
+- (void)removeBindModelWithUid:(NSString*)uid {
+    for (Sock_ClientHasBindModel *model in _clientFDArray) {
+        if ([model.bind_uid isEqualToString:uid]) {
+            [_clientFDArray removeObject:model];
+            break;
+        }
+    }
+}
 @end

@@ -19,45 +19,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "GDSocketChat/SocketClient&#xff08;&#x5ba2;&#x6237;&#x7aef;&#xff09;/SocketClient.m"
-            timestampString = "552979098.277375"
+            filePath = "GDSocketChat/SocketServer&#xff08;&#x670d;&#x52a1;&#x7aef;&#xff09;/SocketServer.m"
+            timestampString = "556169580.6405849"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "-openClientService"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GDSocketChat/SocketClient&#xff08;&#x5ba2;&#x6237;&#x7aef;&#xff09;/SocketClient.m"
-            timestampString = "552979098.277694"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "-openClientService"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GDSocketChat/SocketClient&#xff08;&#x5ba2;&#x6237;&#x7aef;&#xff09;/SocketClient.m"
-            timestampString = "552979098.277891"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "-openClientService"
+            startingLineNumber = "211"
+            endingLineNumber = "211"
+            landmarkName = "-analysisRecvJson:AndClientFD:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

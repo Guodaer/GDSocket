@@ -17,8 +17,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = allViewCustomColor;
+    
+    [UIViewController attemptRotationToDeviceOrientation];
 }
-
+- (BOOL)shouldAutorotate {
+    return NO;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -24,8 +24,21 @@ FOUNDATION_EXTERN NSString * const Socket_SendHandshakeSafe;//握手
 
 FOUNDATION_EXTERN NSString * const Socket_Send_Recv_Message;//通讯消息类型
 
+FOUNDATION_EXTERN NSString * const Socket_SureMessage;//收到消息，返回确认信息
+
+FOUNDATION_EXTERN NSString * const Notification_RecvMessage;
+
+
+
+
 @interface GlobalConfig : NSObject
 
 
+/**
+ 获取当前时间戳->转成字符串，唯一标识
+
+ @return 时间戳字符串
+ */
++ (NSString *)getNowTimeInterval;
 
 @end

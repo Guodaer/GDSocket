@@ -11,6 +11,8 @@
 #import "ChatRecvCell.h"
 #import "ChatSendCell.h"
 #import "GDInputView.h"
+#import "SocketRecvModel.h"
+#import "AppDelegate.h"
 @interface ChatViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *gd_tableView;
@@ -36,27 +38,57 @@
     [self setupChatView];
 
     _isFinished = YES;
-    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(chatKeyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
-
+//    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(chatKeyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(KeyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(KeyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recvMessageNotification:) name:Notification_RecvMessage object:nil];
 }
 
-static int number = 0;
+- (void)recvMessageNotification:(NSNotification *)noti {
+    NSDictionary *dic = [noti userInfo];
+    NSDictionary *jsondic = dic[@"recv"];
+    
+    SocketRecvModel *recvModel = [SocketRecvModel mj_objectWithKeyValues:jsondic];
+    
+    ChatModel *chatmodel = [[ChatModel alloc] init];
+    chatmodel.chat_message = recvModel.chat_message;
+    chatmodel.chat_type = Chat_Send_Recv_Type_Recv;
+    chatmodel.chat_uid = recvModel.chat_uid;
+    chatmodel.message_Size = [ChatManager get_Recv_ChatCellHeightWithMessage:recvModel.chat_message];
+    [self.chatArray addObject:chatmodel];
+    [self.gd_tableView reloadData];
+    [self scrollToFootWithAnimation:YES];
+    
+#if 0
+    if ([self checkArrayIsHaveUid:recvModel.chat_Touid]) {//对方在线
+        int willSendClientfd = [self obtainClient_FDWithTouid:recvModel.chat_Touid];
+        SocketRecvModel *sendModel = [[SocketRecvModel alloc] init];
+        sendModel.sock_in = Socket_Send_Recv_Message;
+        sendModel.chat_uid = recvModel.chat_uid;
+        sendModel.chat_Touid = recvModel.chat_Touid;
+        sendModel.chat_message = recvModel.chat_message;
+        NSString *jsonString = [sendModel ObjectToJson];
+        [SocketManager socket_sendWithJson:jsonString SockFD:willSendClientfd];
+#endif
+}
+
+//static int number = 0;
 - (void)testSendMessageWith:(NSString*)message{
     
     ChatModel *model = [[ChatModel alloc] init];
     model.chat_message = message;
-    if (number % 2 == 0) {
-        model.chat_type = Chat_Send_Recv_Type_Recv;
-        model.chat_uid = @"189";
-    }else{
-        model.chat_type = Chat_Send_Recv_Type_Send;
-        model.chat_uid = @"210";
-    }
+//    if (number % 2 == 0) {
+//        model.chat_type = Chat_Send_Recv_Type_Recv;
+//        model.chat_uid = @"189";
+//    }else{
+    model.chat_type = Chat_Send_Recv_Type_Send;
+    model.chat_uid = APP_CHAT_UID;
+//    }
     model.message_Size = [ChatManager get_Recv_ChatCellHeightWithMessage:message];
     [self.chatArray addObject:model];
     [self.gd_tableView reloadData];
     [self scrollToFootWithAnimation:YES];
-    number += 1;
+//    number += 1;
     
     [[SocketClient shareInstance] sendMessage:message];
 
@@ -71,22 +103,47 @@ static int number = 0;
     
 }
 #pragma mark- 键盘
-- (void)chatKeyboardWillChangeFrame:(NSNotification *)notification{
+- (void)KeyboardWillHide:(NSNotification *)notification {
     NSDictionary *userInfo = notification.userInfo;
     // 动画的持续时间
     double duration = [userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     // 键盘的frame
     CGRect keyboardF = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
     self.gd_keyboardF = keyboardF.origin.y;
-    [self updateTableViewHeightWithKeyboardF:keyboardF.origin.y duration:duration];
+    [self updateTableViewHeightWithKeyboardF:keyboardF.origin.y duration:duration isUp:NO];
+
 }
-- (void)updateTableViewHeightWithKeyboardF:(CGFloat)keyboardY duration:(CGFloat)duration {
+- (void)KeyboardWillShow:(NSNotification *)notification {
+    NSDictionary *userInfo = notification.userInfo;
+    // 动画的持续时间
+    double duration = [userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    // 键盘的frame
+    CGRect keyboardF = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    self.gd_keyboardF = keyboardF.origin.y;
+    [self updateTableViewHeightWithKeyboardF:keyboardF.origin.y duration:duration isUp:YES];
+
+}
+
+
+
+//- (void)chatKeyboardWillChangeFrame:(NSNotification *)notification{
+//    NSDictionary *userInfo = notification.userInfo;
+//    // 动画的持续时间
+//    double duration = [userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+//    // 键盘的frame
+//    CGRect keyboardF = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+//    self.gd_keyboardF = keyboardF.origin.y;
+//    [self updateTableViewHeightWithKeyboardF:keyboardF.origin.y duration:duration];
+//}
+- (void)updateTableViewHeightWithKeyboardF:(CGFloat)keyboardY duration:(CGFloat)duration isUp:(BOOL)isup{
     CGFloat navigationHeight = Height_NavBar;
+    CGFloat tabbar_height = Height_TabbarSafeBottom;
+    if (isup) tabbar_height = 0;
     [UIView animateWithDuration:duration animations:^{
         if (keyboardY > GScreenHeight) {
-            self.gd_tableView.height = GScreenHeight - navigationHeight - self.inputViewHeight;
+            self.gd_tableView.height = GScreenHeight - navigationHeight - self.inputViewHeight-tabbar_height;
         }else{
-            self.gd_tableView.height = keyboardY - self.inputViewHeight - navigationHeight;
+            self.gd_tableView.height = keyboardY - self.inputViewHeight - navigationHeight-tabbar_height;
         }
     }completion:^(BOOL finished) {
         self.isFinished = YES;
@@ -219,10 +276,31 @@ static int number = 0;
                 [weakSelf inputToChangeTableviewHeight];
             }
         };
+        _inputView.moreBtnAction = ^{
+//            [weakSelf forceOrientationLandscape];
+//            [[UIDevice currentDevice] setValue:@(UIInterfaceOrientationLandscapeRight) forKey:@"orientation"];
+//            [UIViewController attemptRotationToDeviceOrientation];
+
+        };
     }
     return _inputView;
 }
-
+//- (void)forceOrientationLandscape{
+//    AppDelegate *appdelegate=(AppDelegate *)[UIApplication sharedApplication].delegate;
+//    appdelegate.isForceLandscape=YES;
+//    appdelegate.isForcePortrait=NO;
+//    [appdelegate application:[UIApplication sharedApplication] supportedInterfaceOrientationsForWindow:self.view.window];
+//}
+//    //强制竖屏
+//- (void)forceOrientationPortrait{
+//    AppDelegate *appdelegate=(AppDelegate *)[UIApplication sharedApplication].delegate;
+//    appdelegate.isForcePortrait=YES;
+//    appdelegate.isForceLandscape=NO;
+//    [appdelegate application:[UIApplication sharedApplication] supportedInterfaceOrientationsForWindow:self.view.window];
+//}
+//    - (BOOL)shouldAutorotate {
+//        return YES;
+//    }
 -(void)dealloc {
     GDLog(@"ChatVC dealloc");
 }

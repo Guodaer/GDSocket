@@ -50,7 +50,21 @@
     
 }
 
+-(BOOL)shouldAutorotate{
+    
+    return [self.selectedViewController shouldAutorotate];
+}
 
+/// 选择的当前控制器是支持的旋转的方向
+- (UIInterfaceOrientationMask)supportedInterfaceOrientations{
+    
+    return  [self.selectedViewController supportedInterfaceOrientations];
+}
+
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
+    
+    return  [self.selectedViewController preferredInterfaceOrientationForPresentation];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

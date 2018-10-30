@@ -15,7 +15,7 @@
 }
 + (NSString*)ObjectToJsonWithObjc:(id)objc options:(NSJSONWritingOptions)options error:(NSError**)error
 {
-    NSData *data = [NSJSONSerialization dataWithJSONObject:[self objectToDictionaryWithObjc:objc] options:options error:error];
+    NSData *data = [NSJSONSerialization dataWithJSONObject:[self gd_objcToDictionaryWithObjc:objc] options:options error:error];
     return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }
 
@@ -45,12 +45,40 @@
         }
         [dic setObject:value forKey:propName];
     }
+    if (props) {
+        free(props);
+    }
     return dic;
-    
-    
-    return nil;
 }
++ (NSDictionary *)gd_objcToDictionaryWithObjc:(id)objc {
+    
+    NSMutableDictionary *dic = [NSMutableDictionary dictionary];
+    unsigned int propsCount;
+    Class objClass = [objc class];
+    while (objClass != [NSObject class]) {
+        objc_property_t *properties = class_copyPropertyList(objClass, &propsCount);
+        for (int i=0; i<propsCount; i++) {
+            objc_property_t prop = properties[i];
+            NSString *propName = [NSString stringWithUTF8String:property_getName(prop)];
+            id value = [objc valueForKey:propName];
+            if(value == nil)
+            {
+                value = [NSNull null];
+            }
+            else
+            {
+                value = [self getObjectInternal:value];
+            }
+            [dic setObject:value forKey:propName];
 
+        }
+        if (properties) {
+            free(properties);
+        }
+        objClass = class_getSuperclass(objClass);
+    }
+    return dic;
+}
 /**
  *  获取类的内部对象
  *
@@ -88,6 +116,6 @@
         }
         return dic;
     }
-    return [self objectToDictionaryWithObjc:obj];
+    return [self gd_objcToDictionaryWithObjc:obj];
 }
 @end

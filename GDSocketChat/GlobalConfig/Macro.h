@@ -49,4 +49,7 @@
 #define Height_TabBar (IS_IPHONE_X==YES)?83.0f: 49.0f
 #define Height_TabbarSafeBottom (IS_IPHONE_X==YES)?34.0f: 0.0f
 
+#define APP_CHAT_UID @"2"
+#define APP_CHAT_TOUID @"1"
+#define SOCKET_Address @"192.168.11.179"
 #endif /* Macro_h */

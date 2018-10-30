@@ -32,6 +32,29 @@
     [super didReceiveMemoryWarning];
     
 }
+#pragma mark - 旋转
+-(BOOL)shouldAutorotate
+{
+    
+    if ([self.topViewController respondsToSelector:@selector(shouldAutorotate)]) {
+        return [self.topViewController shouldAutorotate];
+    }
+    return NO;
+}
+-(UIInterfaceOrientationMask)supportedInterfaceOrientations
+{
+    if ([self.topViewController respondsToSelector:@selector(supportedInterfaceOrientations)]) {
+        return [self.topViewController supportedInterfaceOrientations];
+    }
+    
+    return [super supportedInterfaceOrientations];
+}
 
+- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
+    if ([self.topViewController respondsToSelector:@selector(preferredInterfaceOrientationForPresentation)]) {
+        return [self.topViewController preferredInterfaceOrientationForPresentation];
+    }
+    return [super preferredInterfaceOrientationForPresentation];
+}
 
 @end

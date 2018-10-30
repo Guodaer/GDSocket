@@ -12,7 +12,7 @@
 //socket
 #import "SocketServer.h"
 
-@interface HomePageViewController ()<UITableViewDelegate,UITableViewDataSource>
+@interface HomePageViewController ()<UITableViewDelegate,UITableViewDataSource,BioSockServerDelegate,BioSockClientDelegate>
 
 @property (nonatomic, strong) UITableView *gdtableView;
 
@@ -23,15 +23,67 @@
 
 @implementation HomePageViewController
 
+#pragma mark - 旋转
+//-(BOOL)shouldAutorotate
+//{
+//    return NO;
+//}
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 
     [self setupMainView];
     
-//    [[SocketServer shareInstance] startServerService];
+    
+    
+#if 0
+    [SocketServer shareInstance].s_delegate = self;
+    [[SocketServer shareInstance] startServerService];
+#else
+    [SocketClient shareInstance].c_delegate = self;
     [[SocketClient shareInstance] startClientService];
+#endif
+    
+
+    
 }
+#pragma mark - 客户端
+- (void)client_ConnectFailed:(int)client_fd {
+    GDLog(@"client:-连接失败");
+}
+- (void)client_didlostConnect:(int)client_fd {
+    GDLog(@"client:-server 连接断开");
+}
+- (void)client_connectSuccess:(int)client_fd ipAddress:(NSString *)ip port:(int)port {
+    GDLog(@"client:—连接成功ip=%@,port=%d",ip,port);
+}
+- (void)client_fd:(int)client_fd didReadData:(NSString *)recvJson {
+    GDLog(@"clientRecv:%@",recvJson);
+    NSDictionary *dataDic = [NSJSONSerialization JSONObjectWithData:[recvJson dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableLeaves error:nil];
+    SocketBaseModel *model = [SocketBaseModel mj_objectWithKeyValues:dataDic];
+    if ([model.sock_in isEqualToString:Socket_Send_Recv_Message]) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:Notification_RecvMessage object:nil userInfo:@{@"recv":dataDic}];
+    }
+    
+}
+
+
+#pragma mark - 服务端
+- (void)serverAcceptFailed:(int)sock_fd {
+    GDLog(@"server:accept失败，重启socket");
+}
+- (void)server:(int)sock_fd didAcceptNewSocket:(int)client_fd {
+    GDLog(@"server:%d-%d",sock_fd,client_fd);
+}
+- (void)server:(int)sock_fd didLostClient:(int)client_fd {
+    GDLog(@"server:与clientfd=%d断开连接",client_fd);
+}
+- (void)server:(int)sock_fd didReadData:(NSString *)recvJson withclientFD:(long)client_fd{
+    GDLog(@"serverRecv:%@",recvJson);
+}
+
 
 - (void)setupMainView {
     [self.view addSubview:self.gdtableView];
@@ -41,9 +93,7 @@
         make.bottom.equalTo(self.view).offset(-tabbarHeight);
         make.left.right.equalTo(self.view);
     }];
-    
 }
-
 #pragma mark - tableview delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;

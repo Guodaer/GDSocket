@@ -24,6 +24,7 @@
 #import "SocketServer.h"
 #import "SocketClient.h"
 #import "SocketBaseModel.h"
+#import "SocketHeartAliveManager.h"
 
 //extension
 #import "NSString+Category.h"

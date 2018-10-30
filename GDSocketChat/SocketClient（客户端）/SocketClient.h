@@ -7,8 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "BioSockClientDelegate.h"
 @interface SocketClient : NSObject
+
+@property (nonatomic, assign) id<BioSockClientDelegate> c_delegate;
+
 
 + (instancetype)shareInstance;
 

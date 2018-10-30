@@ -90,7 +90,7 @@
     NSMutableData *mutableData = [[NSMutableData alloc] init];
     
     //超时
-    struct timeval timeout = {30,5};
+    struct timeval timeout = {60,5};
     setsockopt(client_fd, SOL_SOCKET, SO_RCVTIMEO, (const char*)&timeout, sizeof(timeout));
 
     while ((br = recv(client_fd, buf, 1024, 0))!=-1) {//接受的长度

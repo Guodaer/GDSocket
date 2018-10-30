@@ -10,8 +10,7 @@
 
 @interface GDHeartAliveModel:SocketBaseModel
 
-
-
+@property (nonatomic, copy) NSString *alive_heart;
 
 @end
 

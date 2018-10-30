@@ -35,7 +35,11 @@
     if (self) {
         self.layer.borderWidth = 1;
         self.layer.borderColor = Hex_Color(0xcccccc, 1).CGColor;
-        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+//        [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(keyboardWillChangeFrame:) name:UIKeyboardWillChangeFrameNotification object:nil];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(KeyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(KeyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+        
         self.font = [UIFont systemFontOfSize:17];
         self.topOrBottomEdge = 8;
         _originH  = ceil (self.font.lineHeight) + 2 * self.topOrBottomEdge;
@@ -53,7 +57,8 @@
 }
 - (void)beginUpdateUI {
     _originH  = ceil (self.font.lineHeight) + 4 * self.topOrBottomEdge;
-    self.frame =  CGRectMake(0, GScreenHeight - _originH-2, GScreenWidth, _originH);
+    CGFloat tabbar_height = Height_TabbarSafeBottom;
+    self.frame =  CGRectMake(0, GScreenHeight - _originH-2-tabbar_height, GScreenWidth, _originH);
     if (self.inputViewHeight) {
         self.inputViewHeight(_originH);
     }
@@ -115,25 +120,62 @@
 }
 
 #pragma mark-键盘改变notification
--(void)keyboardWillChangeFrame:(NSNotification *)notification{
+
+- (void)KeyboardWillHide:(NSNotification *)notification {
     NSDictionary *userInfo = notification.userInfo;
     // 动画的持续时间
     double duration = [userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
     // 键盘的frame
     CGRect keyboardF = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
     keyboardY = keyboardF.origin.y;
-    [self dealKeyBoardWithKeyboardF:keyboardY duration:duration];
-}
-#pragma mark---处理高度---
--(void)dealKeyBoardWithKeyboardF:(CGFloat)keyboardY duration:(CGFloat)duration {
+    CGFloat tabbar_height = Height_TabbarSafeBottom;
     [UIView animateWithDuration:duration animations:^{
-        if (keyboardY > GScreenHeight) {
-            self.y = GScreenHeight - self.height;
+        if (keyboardF.origin.y > GScreenHeight) {
+            self.y = GScreenHeight - self.height-tabbar_height;
         }else{
-            self.y = keyboardY - self.height;
+            self.y = keyboardF.origin.y - self.height-tabbar_height;
         }
     }];
 }
+- (void)KeyboardWillShow:(NSNotification *)notification {
+    NSDictionary *userInfo = notification.userInfo;
+    // 动画的持续时间
+    double duration = [userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+    // 键盘的frame
+    CGRect keyboardF = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    keyboardY = keyboardF.origin.y;
+//    CGFloat tabbar_height = Height_TabbarSafeBottom;
+    [UIView animateWithDuration:duration animations:^{
+        if (keyboardF.origin.y > GScreenHeight) {
+            
+            self.y = GScreenHeight - self.height;
+        }else{
+            self.y = keyboardF.origin.y - self.height;
+        }
+    }];
+}
+
+//-(void)keyboardWillChangeFrame:(NSNotification *)notification{
+//    NSDictionary *userInfo = notification.userInfo;
+//    // 动画的持续时间
+//    double duration = [userInfo[UIKeyboardAnimationDurationUserInfoKey] doubleValue];
+//    // 键盘的frame
+//    CGRect keyboardF = [userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+//    keyboardY = keyboardF.origin.y;
+//    [self dealKeyBoardWithKeyboardF:keyboardY duration:duration];
+//}
+//#pragma mark---处理高度---
+//-(void)dealKeyBoardWithKeyboardF:(CGFloat)keyboardY duration:(CGFloat)duration {
+//    CGFloat tabbar_height = Height_TabbarSafeBottom;
+//    [UIView animateWithDuration:duration animations:^{
+//        if (keyboardY > GScreenHeight) {
+//
+//            self.y = GScreenHeight - self.height-tabbar_height;
+//        }else{
+//            self.y = keyboardY - self.height;
+//        }
+//    }];
+//}
 #pragma mark- 更多按钮
 - (UIButton *)moreBtn {
     if (!_moreBtn) {
@@ -147,7 +189,9 @@
     return _moreBtn;
 }
 - (void)moreBtnClickAction:(UIButton*)sender {
-    
+    if (self.moreBtnAction) {
+        self.moreBtnAction();
+    }
 }
 - (UIView *)gdBgView {
     if (!_gdBgView) {

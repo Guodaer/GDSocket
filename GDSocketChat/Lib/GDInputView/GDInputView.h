@@ -15,6 +15,8 @@
 
 @property (nonatomic, copy) void(^inputViewHeight)(CGFloat inputHeight);
 
+@property (nonatomic, copy) void(^moreBtnAction)(void);
+
 
 - (void)beginUpdateUI;
 

@@ -22,6 +22,7 @@
 		3D57279820EB8175004FB496 /* ChatUserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D57279720EB8175004FB496 /* ChatUserModel.m */; };
 		3D5727F420EE0354004FB496 /* GDInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5727F320EE0353004FB496 /* GDInputView.m */; };
 		3D5727F820EE2055004FB496 /* NSObject+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5727F720EE2055004FB496 /* NSObject+Extension.m */; };
+		3D5BD38320F8ACEC0027336C /* BioReturnSureModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D5BD38220F8ACEC0027336C /* BioReturnSureModel.m */; };
 		3D6D7CE420EA10D700484053 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D7CE320EA10D700484053 /* AppDelegate.m */; };
 		3D6D7CEC20EA10E200484053 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D6D7CEB20EA10E200484053 /* Assets.xcassets */; };
 		3D6D7CEF20EA10E200484053 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D6D7CED20EA10E200484053 /* LaunchScreen.storyboard */; };
@@ -51,6 +52,8 @@
 		3D6D7D6D20EA24B300484053 /* NSObject+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D7D6120EA24B300484053 /* NSObject+Swizzling.m */; };
 		3D6D7D6E20EA24B300484053 /* NSString+Swizzling.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D7D6320EA24B300484053 /* NSString+Swizzling.m */; };
 		3D6D7D7120EA255700484053 /* SocketClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 3D6D7D7020EA255700484053 /* SocketClient.m */; };
+		3DDEE9502105F4DE00BC9125 /* SockConnectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDEE94F2105F4DE00BC9125 /* SockConnectModel.m */; };
+		3DDEE9532106C6BE00BC9125 /* SocketBindModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DDEE9522106C6BE00BC9125 /* SocketBindModel.m */; };
 		AF07A4C7E572AD06FD475C18 /* Pods_GDSocketChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 504C456E20C4312373AB112B /* Pods_GDSocketChat.framework */; };
 /* End PBXBuildFile section */
 
@@ -102,6 +105,8 @@
 		3D5727F320EE0353004FB496 /* GDInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDInputView.m; sourceTree = "<group>"; };
 		3D5727F620EE2055004FB496 /* NSObject+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject+Extension.h"; sourceTree = "<group>"; };
 		3D5727F720EE2055004FB496 /* NSObject+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Extension.m"; sourceTree = "<group>"; };
+		3D5BD38120F8ACEC0027336C /* BioReturnSureModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BioReturnSureModel.h; sourceTree = "<group>"; };
+		3D5BD38220F8ACEC0027336C /* BioReturnSureModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BioReturnSureModel.m; sourceTree = "<group>"; };
 		3D6D7CDF20EA10D700484053 /* GDSocketChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GDSocketChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D6D7CE220EA10D700484053 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3D6D7CE320EA10D700484053 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -163,6 +168,12 @@
 		3D6D7D6320EA24B300484053 /* NSString+Swizzling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Swizzling.m"; sourceTree = "<group>"; };
 		3D6D7D6F20EA255700484053 /* SocketClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SocketClient.h; sourceTree = "<group>"; };
 		3D6D7D7020EA255700484053 /* SocketClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocketClient.m; sourceTree = "<group>"; };
+		3DDEE94E2105F4DE00BC9125 /* SockConnectModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SockConnectModel.h; sourceTree = "<group>"; };
+		3DDEE94F2105F4DE00BC9125 /* SockConnectModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SockConnectModel.m; sourceTree = "<group>"; };
+		3DDEE9512106C6BE00BC9125 /* SocketBindModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SocketBindModel.h; sourceTree = "<group>"; };
+		3DDEE9522106C6BE00BC9125 /* SocketBindModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SocketBindModel.m; sourceTree = "<group>"; };
+		3DFFF9AA20F797EC00B7141B /* BioSockClientDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BioSockClientDelegate.h; sourceTree = "<group>"; };
+		3DFFF9AB20F7983C00B7141B /* BioSockServerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BioSockServerDelegate.h; sourceTree = "<group>"; };
 		504C456E20C4312373AB112B /* Pods_GDSocketChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GDSocketChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79EFA72B876499B15591E635 /* Pods-GDSocketChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GDSocketChat.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GDSocketChat/Pods-GDSocketChat.debug.xcconfig"; sourceTree = "<group>"; };
 		D1E01227A8BEF653C6C49937 /* Pods-GDSocketChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GDSocketChat.release.xcconfig"; path = "Pods/Target Support Files/Pods-GDSocketChat/Pods-GDSocketChat.release.xcconfig"; sourceTree = "<group>"; };
@@ -247,6 +258,12 @@
 				3D4121B920F37ED6003A5B09 /* SocketBaseModel.m */,
 				3D4121BB20F47F17003A5B09 /* SocketRecvModel.h */,
 				3D4121BC20F47F17003A5B09 /* SocketRecvModel.m */,
+				3D5BD38120F8ACEC0027336C /* BioReturnSureModel.h */,
+				3D5BD38220F8ACEC0027336C /* BioReturnSureModel.m */,
+				3DDEE94E2105F4DE00BC9125 /* SockConnectModel.h */,
+				3DDEE94F2105F4DE00BC9125 /* SockConnectModel.m */,
+				3DDEE9512106C6BE00BC9125 /* SocketBindModel.h */,
+				3DDEE9522106C6BE00BC9125 /* SocketBindModel.m */,
 			);
 			path = Socket_Model;
 			sourceTree = "<group>";
@@ -280,7 +297,6 @@
 				3D6D7D1C20EA11EF00484053 /* HomePage（首页） */,
 				3D6D7D1D20EA120100484053 /* Mine我的 */,
 				3D6D7D2720EA124A00484053 /* GlobalConfig */,
-				3D6D7D4120EA221800484053 /* ChatManager */,
 				3D6D7D1420EA118200484053 /* SocketManager（收发.） */,
 				3D6D7D3520EA1EF200484053 /* SocketServer（服务端） */,
 				3D6D7D4820EA231D00484053 /* SocketClient（客户端） */,
@@ -316,6 +332,8 @@
 			children = (
 				3D6D7D2420EA123500484053 /* SocketManager.h */,
 				3D6D7D2520EA123500484053 /* SocketManager.m */,
+				3DFFF9AB20F7983C00B7141B /* BioSockServerDelegate.h */,
+				3DFFF9AA20F797EC00B7141B /* BioSockClientDelegate.h */,
 				3D4121B520F37DA5003A5B09 /* SocketHeartAliveManager.h */,
 				3D4121B620F37DA5003A5B09 /* SocketHeartAliveManager.m */,
 			);
@@ -434,13 +452,6 @@
 			children = (
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		3D6D7D4120EA221800484053 /* ChatManager */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ChatManager;
 			sourceTree = "<group>";
 		};
 		3D6D7D4820EA231D00484053 /* SocketClient（客户端） */ = {
@@ -697,6 +708,7 @@
 				3D6D7D3820EA1F0300484053 /* SocketServer.m in Sources */,
 				3D57277E20EA31D9004FB496 /* NSAttributedString+category.m in Sources */,
 				3D6D7D3320EA172200484053 /* GDNavigationViewController.m in Sources */,
+				3DDEE9502105F4DE00BC9125 /* SockConnectModel.m in Sources */,
 				3D6D7D6C20EA24B300484053 /* NSObject+AvoidCrash.m in Sources */,
 				3D6D7D3020EA170600484053 /* GDTabbarViewController.m in Sources */,
 				3D5727F820EE2055004FB496 /* NSObject+Extension.m in Sources */,
@@ -712,9 +724,11 @@
 				3D57279520EB7FDF004FB496 /* ChatModel.m in Sources */,
 				3D6D7D1820EA11A900484053 /* BaseViewController.m in Sources */,
 				3D6D7D4B20EA238400484053 /* HomePageListModel.m in Sources */,
+				3DDEE9532106C6BE00BC9125 /* SocketBindModel.m in Sources */,
 				3D6D7D6820EA24B300484053 /* NSMutableArray+Swizzling.m in Sources */,
 				3D57279820EB8175004FB496 /* ChatUserModel.m in Sources */,
 				3D6D7D6D20EA24B300484053 /* NSObject+Swizzling.m in Sources */,
+				3D5BD38320F8ACEC0027336C /* BioReturnSureModel.m in Sources */,
 				3D4121BD20F47F17003A5B09 /* SocketRecvModel.m in Sources */,
 				3D6D7D2620EA123500484053 /* SocketManager.m in Sources */,
 				3D6D7CE420EA10D700484053 /* AppDelegate.m in Sources */,
@@ -888,16 +902,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9KAE53J4GG;
+				DEVELOPMENT_TEAM = 26KW7U5BLP;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GDSocketChat/GlobalConfig/GDSocketChat-prefix.pch";
 				INFOPLIST_FILE = GDSocketChat/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.GDSocketChat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gd.GDSocketChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -909,16 +923,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9KAE53J4GG;
+				DEVELOPMENT_TEAM = 26KW7U5BLP;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "GDSocketChat/GlobalConfig/GDSocketChat-prefix.pch";
 				INFOPLIST_FILE = GDSocketChat/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.GDSocketChat;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gd.GDSocketChat;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
